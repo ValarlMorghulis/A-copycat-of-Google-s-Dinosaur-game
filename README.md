@@ -1,5 +1,51 @@
 # A-copycat-of-Google-s-Dinosaur-game
-
+# Game Creation Notes  
+  
+## Operating System  
+Windows  
+  
+## Platform  
+X64  
+  
+## C Language Environment  
+msvc(Visual Stdio 2022)  
+  
+## Compilation Options  
+Debug, Release  
+  
+## Third-party Libraries Used  
+SDL2.h, SDL_image.h, SDL_ttf.h  
+  
+## Dynamic Link Libraries Used  
+SDL2.dll, SDL_image.dll, SDL_ttf.dll  
+  
+## Gameplay Mechanics  
+- Space or Up arrow key: Jump  
+- Down arrow key: Duck  
+- Left mouse button: Pause or resume  
+- F key with Shift: Enable or disable flight  
+- G key with Shift: Enable or disable invincibility  
+  
+## Release File Open Method  
+Open the x86 folder -> Go to the Release folder -> Run the little dinosaur.exe file  
+  
+## Source Code Open Method  
+Double-click the little dinosaur icon -> Open the source.c file  
+  
+## Objective  
+Pay tribute to the classic game, recreate the Chrome dinosaur game as accurately as possible, without making major changes or adding extra features.  
+  
+## Thought Process  
+1. Find images  
+2. Learn about animation creation in SDL  
+3. Write collision detector  
+4. Write scoreboard  
+5. Implement pause, invincibility, flight functionality  
+6. Render text  
+7. Finally, optimize the game.  
+  
+## Creation Thoughts  
+Before making this small game, I had never heard of the third-party library SDL. Therefore, I invested a lot of time and effort to learn it from scratch. After spending most of my free time in a week learning, I initially grasped some techniques and started working on the little dinosaur game. It took another week, but ultimately, the sense of success when it was completed was gratifying.
 # 游戏制作说明  
   
 ## 操作系统  
