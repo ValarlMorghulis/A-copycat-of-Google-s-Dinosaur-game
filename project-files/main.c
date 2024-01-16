@@ -25,13 +25,13 @@ int main(int argc,char*argv[]) {
     {
         SDL_Log("Can not create window ,%s", SDL_GetError());
         return 1;
-    }//´´½¨´°¿Ú
+    }//åˆ›å»ºçª—å£
     font = TTF_OpenFont("hanyifengshanghei85w.ttf", 64);
     if (font == NULL)
     {
         SDL_Log("Can not open font");
         return 1;
-    }//´ò¿ª×ÖÌå¿â
+    }//æ‰“å¼€å­—ä½“åº“
 
     SDL_Renderer *renderer;
     renderer=SDL_CreateRenderer(win, -1, SDL_RENDERER_ACCELERATED);
@@ -39,7 +39,7 @@ int main(int argc,char*argv[]) {
     {
         SDL_Log("Can not create renderer ,%s", SDL_GetError());
         return 1;
-    }//´´½¨äÖÈ¾Æ÷
+    }//åˆ›å»ºæ¸²æŸ“å™¨
 
     SDL_Texture* pause = IMG_LoadTexture(renderer,"pause.png");
     SDL_Texture* left = IMG_LoadTexture(renderer, "left.png");
@@ -54,7 +54,7 @@ int main(int argc,char*argv[]) {
     SDL_Texture* cloud = IMG_LoadTexture(renderer, "cloud.png");
     SDL_Texture* gameover = IMG_LoadTexture(renderer, "over.png");
     SDL_Texture* ground = IMG_LoadTexture(renderer,"ground.png");
-    SDL_Texture* stop = IMG_LoadTexture(renderer, "stop.png");//ÔØÈëÍ¼Æ¬
+    SDL_Texture* stop = IMG_LoadTexture(renderer, "stop.png");//è½½å…¥å›¾ç‰‡
     SDL_Texture* texture0 = NULL;
     SDL_Surface* text0 = NULL;
     SDL_Texture* texture1 = NULL;
@@ -79,7 +79,7 @@ int main(int argc,char*argv[]) {
     int d1 = 100;
     int trans = 0;
     SDL_Event event1;       
-    while (1) { //¿ªÊ¼½çÃæ
+    while (1) { //å¼€å§‹ç•Œé¢
         long start = SDL_GetTicks();
         if (startgame == false)
         {
@@ -98,7 +98,7 @@ int main(int argc,char*argv[]) {
             SDL_Rect desRectb = { x1,450,1150,30 };
             SDL_RenderCopy(renderer, ground, NULL, &desRectb);
         }
-        else {//Öğ²½¹ı¶Èµ½ÓÎÏ·½çÃæ
+        else {//é€æ­¥è¿‡åº¦åˆ°æ¸¸æˆç•Œé¢
             if (trans != 20)
             {
                 SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
@@ -181,7 +181,7 @@ loop:     score = 0;
     SDL_Point rightcorner;
     SDL_Point leftcorner;
     gameisover = false;
-    while (gameisover==false)//ÓÎÏ·½çÃæ
+    while (gameisover==false)//æ¸¸æˆç•Œé¢
     {
         long start = SDL_GetTicks();
 
@@ -210,19 +210,19 @@ loop:     score = 0;
                     ifdown = false;
                     max = 18;
                 }
-            }//ÌøÔ¾
+            }//è·³è·ƒ
             SDL_Rect desRectup = { 50,jumpy,80,100 };
             SDL_Rect desRectdown = { 50,390,100,60 };
             if (bend == false)
             {
                 if (change % 41 <= 20) SDL_RenderCopy(renderer, left, NULL, &desRectup);
-                else SDL_RenderCopy(renderer, right, NULL, &desRectup);//Ğ¡¿ÖÁúÅÜ¶¯
+                else SDL_RenderCopy(renderer, right, NULL, &desRectup);//å°æé¾™è·‘åŠ¨
                 center.x = 90;
                 center.y = jumpy + 50;
                 rightcorner.x = 130 - 3;
                 rightcorner.y = jumpy + 3;
                 leftcorner.x = 50 + 10;
-                leftcorner.y = jumpy + 100 - 10;//È¡Åö×²¼ì²âµã
+                leftcorner.y = jumpy + 100 - 10;//å–ç¢°æ’æ£€æµ‹ç‚¹
             }
             else {
                 if (jump == false) {
@@ -232,21 +232,21 @@ loop:     score = 0;
                     rightcorner.x = 150 - 3;
                     rightcorner.y = 390 + 3;
                     leftcorner.x = 50 + 10;
-                    leftcorner.y = 450 - 10;//È¡Åö×²¼ì²âµã
+                    leftcorner.y = 450 - 10;//å–ç¢°æ’æ£€æµ‹ç‚¹
                 }
                 else {
                     if (change % 41 <= 20) SDL_RenderCopy(renderer, left, NULL, &desRectup);
-                    else SDL_RenderCopy(renderer, right, NULL, &desRectup);//Ğ¡¿ÖÁúÅÜ¶¯
+                    else SDL_RenderCopy(renderer, right, NULL, &desRectup);//å°æé¾™è·‘åŠ¨
                     center.x = 90;
                     center.y = jumpy + 50;
                     rightcorner.x = 130 - 3;
                     rightcorner.y = jumpy + 3;
                     leftcorner.x = 50 + 10;
-                    leftcorner.y = jumpy + 100 - 10;//È¡Åö×²¼ì²âµã
+                    leftcorner.y = jumpy + 100 - 10;//å–ç¢°æ’æ£€æµ‹ç‚¹
                 }
             }
         }
-        else {//·ÉĞĞÄ£Ê½
+        else {//é£è¡Œæ¨¡å¼
             jump = false;
             ifdown = false;
             if (downing == false)
@@ -285,12 +285,12 @@ loop:     score = 0;
             rightcorner.x = 0;
             rightcorner.y = 0;
             leftcorner.x = 0;
-            leftcorner.y = 0;//È¡Åö×²¼ì²âµã
+            leftcorner.y = 0;//å–ç¢°æ’æ£€æµ‹ç‚¹
         }
         }
 
 
-        //µØÃæ
+        //åœ°é¢
         SDL_Rect desRectground1 = { groundx1,450,1150,30 };
         SDL_Rect desRectground2 = { groundx2,450,1150,30 };
         SDL_RenderCopy(renderer, ground, NULL, &desRectground1);
@@ -300,7 +300,7 @@ loop:     score = 0;
         if (groundx1 < -1150)groundx1 = 0;
         if (groundx2 < 0)groundx2 = 1150;
 
-        //ÕÏ°­ÎïËæ»úÉú³É
+        //éšœç¢ç‰©éšæœºç”Ÿæˆ
         int hurdle = rand() % 10;
         if (xbig < -115) {
             xbig = 1150;
@@ -355,7 +355,7 @@ loop:     score = 0;
             SDL_RenderCopy(renderer, big, NULL, &desRectbig);
             if (invincible == false)
             {
-                //Åö×²¼ì²â
+                //ç¢°æ’æ£€æµ‹
                 if (center.x >= xbig && center.x <= xbig + 100 - 6 && center.y >= 360 && center.y <= 460)gameisover = true;
                 if (rightcorner.x >= xbig && rightcorner.x <= xbig + 100 - 6 && rightcorner.y >= 360 && rightcorner.y <= 460)gameisover = true;
                 if (leftcorner.x >= xbig && leftcorner.x <= xbig + 100 - 6 && leftcorner.y >= 360 && leftcorner.y <= 460)gameisover = true;
@@ -367,7 +367,7 @@ loop:     score = 0;
             SDL_RenderCopy(renderer, small, NULL, &desRectsmall);
             if (invincible == false)
             {
-                //Åö×²¼ì²â
+                //ç¢°æ’æ£€æµ‹
                 if (center.x >= xsmall && center.x <= xsmall + 52 - 8 && center.y >= 360 + 8 && center.y <= 460)gameisover = true;
                 if (rightcorner.x >= xsmall && rightcorner.x <= xsmall + 52 - 8 && rightcorner.y >= 360 + 8 && rightcorner.y <= 460)gameisover = true;
                 if (leftcorner.x >= xsmall && leftcorner.x <= xsmall + 52 - 8 && leftcorner.y >= 360 + 8 && leftcorner.y <= 460)gameisover = true;
@@ -379,7 +379,7 @@ loop:     score = 0;
             SDL_RenderCopy(renderer, big2, NULL, &desRectbig2);
             if (invincible == false)
             {
-                //Åö×²¼ì²â
+                //ç¢°æ’æ£€æµ‹
                 if (center.x >= xbig2 && center.x <= xbig2 + 100 - 4 && center.y >= 360 + 4 && center.y <= 460)gameisover = true;
                 if (rightcorner.x >= xbig2 && rightcorner.x <= xbig2 + 100 - 4 && rightcorner.y >= 360 + 4 && rightcorner.y <= 460)gameisover = true;
                 if (leftcorner.x >= xbig2 && leftcorner.x <= xbig2 + 100 - 4 && leftcorner.y >= 360 + 4 && leftcorner.y <= 460)gameisover = true;
@@ -391,7 +391,7 @@ loop:     score = 0;
             SDL_RenderCopy(renderer, middle, NULL, &desRectmiddle);
             if (invincible == false)
             {
-                //Åö×²¼ì²â
+                //ç¢°æ’æ£€æµ‹
                 if (center.x >= xmiddle && center.x <= xmiddle + 100 - 5 && center.y >= 360 + 5 && center.y <= 460)gameisover = true;
                 if (rightcorner.x >= xmiddle && rightcorner.x <= xmiddle + 100 - 5 && rightcorner.y >= 360 + 5 && rightcorner.y <= 460)gameisover = true;
                 if (leftcorner.x >= xmiddle && leftcorner.x <= xmiddle + 100 - 5 && leftcorner.y >= 360 + 5 && leftcorner.y <= 460)gameisover = true;
@@ -400,7 +400,7 @@ loop:     score = 0;
         }
 
 
-        //·ÉĞĞÕÏ°­ÎïËæ»úÉú³É
+        //é£è¡Œéšœç¢ç‰©éšæœºç”Ÿæˆ
         if (score>500) {
             if (hurdlefly == false)
                 if (hurdlesmall == false || xsmall < interval)
@@ -420,7 +420,7 @@ loop:     score = 0;
             else SDL_RenderCopy(renderer, fly2, NULL, &desRectfly);
             if (invincible == false)
             {
-                //Åö×²¼ì²â
+                //ç¢°æ’æ£€æµ‹
                 if (center.x >= xfly && center.x <= xfly + 48 && center.y >= yfly && center.y <= yfly + 38)gameisover = true;
                 if (rightcorner.x >= xfly && rightcorner.x <= xfly + 48 && rightcorner.y >= yfly && rightcorner.y <= yfly + 38)gameisover = true;
                 if (leftcorner.x >= xfly && leftcorner.x <= xfly + 48 && leftcorner.y >= yfly && leftcorner.y <= yfly + 38)gameisover = true;
@@ -428,7 +428,7 @@ loop:     score = 0;
         }
 
 
-        //ÔÆ¶ä1
+        //äº‘æœµ1
         if (xcloud1 < -75) {
             ycloud1 = rand() % 130 + 20;
             xcloud1 = 1150;
@@ -437,7 +437,7 @@ loop:     score = 0;
         xcloud1=xcloud1-2;
         SDL_RenderCopy(renderer, cloud, NULL, &desRectcloud1);
 
-        //ÔÆ¶ä2
+        //äº‘æœµ2
         if (xcloud2 < -75) {
             ycloud2 = rand() % 130 + 20;
             xcloud2 = 1150;
@@ -447,7 +447,7 @@ loop:     score = 0;
         SDL_RenderCopy(renderer, cloud, NULL, &desRectcloud2);
                 
 
-        //¼Æ·Ö°å
+        //è®¡åˆ†æ¿
         SDL_Color color = { 0,0,0,255 };
         text5 = TTF_RenderText_Blended(font, "Score:", color);
         texture5 = SDL_CreateTextureFromSurface(renderer, text5);
@@ -460,7 +460,7 @@ loop:     score = 0;
         SDL_RenderCopy(renderer, texture2, NULL, &desRecttext2);
 
 
-        //×îºÃ³É¼¨
+        //æœ€å¥½æˆç»©
         if (again == true)
         {
             text6 = TTF_RenderText_Blended(font, "Best Score:", color);
@@ -476,7 +476,7 @@ loop:     score = 0;
         }
 
 
-        //ÎŞµĞÄ£Ê½
+        //æ— æ•Œæ¨¡å¼
         if (invincible == true)
         {
             text4 = TTF_RenderUTF8_Blended(font, "Invincible Mode", color);
@@ -485,7 +485,7 @@ loop:     score = 0;
             SDL_RenderCopy(renderer, texture4, NULL, &desRecttext4);
         }
 
-        //·ÉĞĞÄ£Ê½
+        //é£è¡Œæ¨¡å¼
         if (flying == true)
         {
             text0 = TTF_RenderUTF8_Blended(font, "Flying Mode", color);
@@ -495,7 +495,7 @@ loop:     score = 0;
         }
 
 
-        //ÔİÍ£
+        //æš‚åœ
         loop1:if (ifpause == true)
         {
             SDL_Rect desRectstop = { 500,200,100,100 };
@@ -505,7 +505,7 @@ loop:     score = 0;
         SDL_RenderPresent(renderer);
 
 
-        //ÊÂ¼şÅĞ¶Ï
+        //äº‹ä»¶åˆ¤æ–­
         SDL_Event event2;
                 while (SDL_PollEvent(&event2))
         {
@@ -550,7 +550,7 @@ loop:     score = 0;
         change++;
         score++;
 
-        //ËÙ¶È¿ØÖÆ
+        //é€Ÿåº¦æ§åˆ¶
         if (score % 500 == 0) {
             speed = speed + 2;
             interval = interval - 50;
@@ -558,7 +558,7 @@ loop:     score = 0;
         
 
 
-       //Ö¡ÂÊ¿ØÖÆ
+       //å¸§ç‡æ§åˆ¶
         long now = SDL_GetTicks();
         long time = now - start;
         long frame = 1000 / framerate;
@@ -569,7 +569,7 @@ loop:     score = 0;
 
     bool ifloop = false;        
     SDL_Event event3;
-    while (1)//½áÊø½çÃæ
+    while (1)//ç»“æŸç•Œé¢
     {
         SDL_Rect desRectc = { 400,150,300,130 };
         SDL_RenderCopy(renderer, gameover, NULL, &desRectc);
@@ -597,7 +597,7 @@ loop:     score = 0;
     }
     
     
-    //Ïú»Ù
+    //é”€æ¯
     SDL_DestroyTexture(pause);
     SDL_DestroyTexture(left);
     SDL_DestroyTexture(right);
